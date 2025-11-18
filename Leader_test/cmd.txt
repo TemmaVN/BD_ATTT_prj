@@ -1,0 +1,83 @@
+# Tìm địa chỉ IP của Kali
+ip addr show
+# hoặc
+ifconfig
+
+# Tìm địa chỉ IP của Windows 10
+sudo nmap -sn 192.168.1.0/24
+# Điều chỉnh dải IP theo mạng của bạn
+# Quét toàn bộ mạng để tìm Windows 10
+sudo nmap -sn 192.168.1.0/24
+
+# Quét với nhiều phương pháp
+sudo nmap -sn -PE -PS21,22,23,25,80,135,139,445 192.168.1.0/24
+
+# Lưu kết quả ra file
+sudo nmap -sn 192.168.1.0/24 -oN host_discovery.txt
+# Quét cổng cơ bản
+sudo nmap [IP_Windows10]
+
+
+#################################################
+#################################################
+#################################################
+#################################################
+
+# Quét tất cả cổng TCP
+sudo nmap -p- [IP_Windows10]
+
+# Quét cổng phổ biến Windows
+sudo nmap -p 135,139,445,80,443,21,22,23,25,53,110,143,993,995 [IP_Windows10]
+
+# Quét UDP các cổng quan trọng
+sudo nmap -sU -p 53,67,68,69,123,137,138,161,445 [IP_Windows10]
+# Xác định dịch vụ và OS
+sudo nmap -A [IP_Windows10]
+
+# Quét cổng với timing nhanh
+sudo nmap -T4 -F [IP_Windows10]
+
+# Quét kỹ các dịch vụ Windows
+sudo nmap -sV -sC -p 135,139,445 [IP_Windows10]
+
+#################################################
+#################################################
+#################################################
+#################################################
+
+# Trên Kali Linux
+cd ~
+mkdir nmap_practice
+cd nmap_practice
+
+# Tạo các script Python
+nano nmap_scanner.py  # Copy code trên vào
+nano advanced_scanner.py  # Copy code trên vào
+
+# Cấp quyền thực thi
+chmod +x nmap_scanner.py advanced_scanner.py
+
+# Tìm IP Windows 10
+sudo nmap -sn 192.168.1.0/24
+
+# Chạy script Python cơ bản
+python3 nmap_scanner.py
+
+# Chạy script nâng cao
+python3 advanced_scanner.py
+
+# Xem kết quả scan
+cat scan_results.json
+ls -la *.txt
+
+# Phân tích với các tool khác
+sudo netdiscover -r 192.168.1.0/24
+
+# Tìm Windows host nhanh
+sudo nmap -T4 -p 135,139,445 --open 192.168.1.0/24
+
+# Quét SMB chi tiết
+sudo nmap --script smb-os-discovery,smb-security-mode,smb-enum-shares [IP_Windows]
+
+# Kiểm tra vulnerability
+sudo nmap --script smb-vuln* [IP_Windows]

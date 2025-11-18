@@ -1,0 +1,83 @@
+{
+  "hosts": [
+    {
+      "ip": "192.168.226.1",
+      "mac": "00:50:56:C0:00:08",
+      "vendor": "VMware"
+    },
+    {
+      "ip": "192.168.226.2",
+      "mac": "00:50:56:F1:D0:93",
+      "vendor": "VMware"
+    },
+    {
+      "ip": "192.168.226.137",
+      "mac": "00:0C:29:81:8B:7B",
+      "vendor": "VMware"
+    },
+    {
+      "ip": "192.168.226.254",
+      "mac": "00:50:56:EF:BE:4C",
+      "vendor": "VMware"
+    },
+    {
+      "ip": "192.168.226.135"
+    }
+  ],
+  "192.168.226.1": [
+    {
+      "port": "135",
+      "protocol": "tcp",
+      "state": "open",
+      "name": "msrpc",
+      "product": "Microsoft Windows RPC",
+      "version": ""
+    },
+    {
+      "port": "139",
+      "protocol": "tcp",
+      "state": "open",
+      "name": "netbios-ssn",
+      "product": "Microsoft Windows netbios-ssn",
+      "version": ""
+    }
+  ],
+  "192.168.226.2": [
+    {
+      "port": "53",
+      "protocol": "tcp",
+      "state": "open",
+      "name": "domain",
+      "product": "",
+      "version": ""
+    }
+  ],
+  "192.168.226.137": [
+    {
+      "port": "135",
+      "protocol": "tcp",
+      "state": "open",
+      "name": "msrpc",
+      "product": "Microsoft Windows RPC",
+      "version": ""
+    },
+    {
+      "port": "139",
+      "protocol": "tcp",
+      "state": "open",
+      "name": "netbios-ssn",
+      "product": "Microsoft Windows netbios-ssn",
+      "version": ""
+    },
+    {
+      "port": "445",
+      "protocol": "tcp",
+      "state": "open",
+      "name": "microsoft-ds",
+      "product": "",
+      "version": ""
+    }
+  ],
+  "192.168.226.254": [],
+  "192.168.226.135": []
+}
